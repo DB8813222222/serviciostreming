@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB STORE - Tienda Virtual de Streaming</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            text-align: center;
+            transition: background-color 0.5s ease;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%, 20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.5s ease;
+        }
+
+        .promo-section {
+            text-align: center;
+            background-color: #1e1e1e;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0%, 20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            animation: fadeInOut 3s ease-in-out;
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            flex: 0 0 calc(50% - 30px);
+            max-width: calc(50% - 30px);
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .product img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .product:hover .buy-button {
+            background-color: #45a049;
+        }
+
+        .product-description {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .product:hover .product-description {
+            display: block;
+            font-size: 14px;
+        }
+
+        .duration,
+        .device-info {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #777;
+            font-weight: bold;
+        }
+
+        .quienes-somos-message {
+            background-color: #F0E68C;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Media Query para dispositivos móviles */
+        @media only screen and (max-width: 768px) {
+            .product {
+                flex: 0 0 calc(100% - 30px);
+                max-width: calc(100% - 30px);
+            }
+
+            nav a {
+                margin: 0 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .gallery img {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function comprarCuentaCompleta(producto) {
+            // Redirige al usuario a la página de compra
+            window.location.href = "https://carlitosstore.com/pagina/";
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <!-- Las opciones de Inicio y Promociones han sido eliminadas -->
+    </nav>
+
+    <div class="promo-section">
+        <h1>DB STORE</h1>
+    </div>
+
+    <div class="gallery">
+        <img src="https://i.ibb.co/9bfPy2H/Screenshot-2.png" alt="Image 1">
+        <img src="https://i.ibb.co/2Zy0YDM/Screenshot-1.png" alt="Image 2">
+        <img src="https://i.ibb.co/WgcMqVB/Screenshot-3.png" alt="Image 3">
+    </div>
+
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product" onclick="comprarCuentaCompleta('Disney+')">
+            <img src="https://logos-marcas.com/wp-content/uploads/2021/03/Disney-Simbolo.png" alt="Disney+">
+            <h2>Disney+</h2>
+            <p>Precio: $2</p>
+            <p class="duration">Duración: 30 días</p>
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>¡Disfruta de las mejores películas y series de Disney!</p>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product" onclick="comprarCuentaCompleta('Star+')">
+            <img src="https://static-assets.bamgrid.com/product/starplus/images/share-default.d72cf588f6d06cba22171f5ae44289d3.png" alt="Star+">
+            <h2>Star+</h2>
+            <p>Precio: $2.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Descubre contenido exclusivo con Star+.</p>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product" onclick="comprarCuentaCompleta('Amazon Prime')">
+            <img src="https://www.blogseguridad.com/wp-content/uploads/2023/04/amazon-prime.jpg" alt="Amazon Prime">
+            <h2>Amazon Prime</h2>
+            <p>Precio: $1.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Disfruta de envíos rápidos y acceso a Prime Video.</p>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product" onclick="comprarCuentaCompleta('Paramount+')">
+            <img src="https://media.primicias.ec/2021/01/30043506/Paramount-Plus.jpg" alt="Paramount+">
+            <h2>Paramount+</h2>
+            <p>Precio: $1.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Accede a películas y series exclusivas en Paramount+.</p>
+            </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product" onclick="comprarCuentaCompleta('HBO Max')">
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/AN6F2PQ3HVBLVNGCWAINMNTHHM.png" alt="HBO Max">
+            <h2>HBO Max</h2>
+            <p>Precio: $1.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Disfruta de las mejores producciones de HBO.</p>
+            </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="product" onclick="comprarCuentaCompleta('Netflix')">
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/2JA7URADWJDW7LWZQNZJNHG3PA.png" alt="Netflix">
+            <h2>Netflix</h2>
+            <p>Precio: $3</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Disfruta de un amplio catálogo de películas y series en Netflix.</p>
+            </div>
+        </div>
+
+        <!-- Nuevo Producto - YouTube Premium -->
+        <div class="product" onclick="comprarCuentaCompleta('YouTube Premium')">
+            <img src="https://www.digiseller.ru/preview/471349/p1_3100914_847f5fee.jpg" alt="YouTube Premium">
+            <h2>YouTube Premium</h2>
+            <p>Precio: $1.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Disfruta de YouTube sin anuncios y con funciones exclusivas.</p>
+            </div>
+        </div>
+
+        <!-- Nuevo Producto - MagisTV -->
+        <div class="product" onclick="comprarCuentaCompleta('MagisTV')">
+            <img src="https://i.ibb.co/GQs8bYJ/b0583da6-cb17-4898-b94c-250c0557e95d.jpg" alt="MagisTV">
+            <h2>MagisTV</h2>
+            <p>Precio: $2.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Descubre el contenido exclusivo de MagisTV.</p>
+            </div>
+        </div>
+
+        <!-- Nuevo Producto - Canva Pro -->
+        <div class="product" onclick="comprarCuentaCompleta('Canva Pro')">
+            <img src="https://th.bing.com/th/id/OIP.1um1a9SQyYDBHYtySMB_1AAAAA?rs=1&pid=ImgDetMain" alt="Canva Pro">
+            <h2>Canva Pro</h2>
+            <p>Precio: $1.50</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Accede a herramientas profesionales de diseño con Canva Pro.</p>
+            </div>
+        </div>
+
+        <!-- Nuevo Producto - Crunchyroll -->
+        <div class="product" onclick="comprarCuentaCompleta('Crunchyroll')">
+            <img src="https://th.bing.com/th/id/OIP.0699OsVosIkLQjcNK-GSyAHaEc?rs=1&pid=ImgDetMain" alt="Crunchyroll">
+            <h2>Crunchyroll</h2>
+            <p>Precio: $2</p>
+            <p class="duration">Duración: 30 días</p>
+            <!-- Información sobre dispositivos -->
+            <p class="device-info">Dispositivos: 1</p>
+            <a href="javascript:void(0);" class="buy-button">Comprar</a>
+            <div class="product-description">
+                <p>Disfruta de tus animes favoritos con Crunchyroll.</p>
+            </div>
+        </div>
+ <!-- Nuevo Producto - Spotify-->
+ <div class="product" onclick="comprarCuentaCompleta('Spotify')">
+    <img src="https://www.iranicard.ir/wp-content/uploads/2019/12/spotify-1.png" alt="Crunchyroll">
+    <h2>Spotify</h2>
+    <p>Precio: $2</p>
+    <p class="duration">Duración: 30 días</p>
+    <!-- Información sobre dispositivos -->
+    <p class="device-info">Dispositivos: 1</p>
+    <a href="javascript:void(0);" class="buy-button">Comprar</a>
+    <div class="product-description">
+        <p>Disfruta de tus musicas Favorita.</p>
+
+    </div>
+
+    <script>
+        function comprarCuentaCompleta(producto) {
+            // Preguntar por la cantidad a pagar
+            var cantidadAPagar = prompt("Ingrese la cantidad que va a pagar:");
+    
+            // Verificar si se ingresó una cantidad
+            if (cantidadAPagar !== null && cantidadAPagar !== "") {
+                // Mostrar mensaje con la cantidad y redirigir a WhatsApp
+                var mensaje = "Cantidad a pagar: $" + cantidadAPagar + "\n¿Estás seguro de querer comprar " + producto + "?";
+                if (confirm(mensaje)) {
+                    var whatsappLink = "https://wa.link/w9h3m7";
+                    window.location.href = whatsappLink;
+                }
+            } else {
+                alert("Por favor, ingrese una cantidad válida.");
+            }
+        }
+    </script>
+
+</body>
+</html>
